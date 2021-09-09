@@ -1,0 +1,30 @@
+model-viewer {
+    width: 300px;
+    height: 300px;
+    --progress-bar-color: rgba(0, 0, 0, 0.247);
+
+  }
+#mvDummy {
+    width: 300px;
+    height: 300px;
+}
+
+#ballContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.sessionTitle {
+  color: #1266a6;margin: 0px;font-family: 'Dell Replica';font-size: 8px;text-align: center;height: 30px;width: fit-content;line-height: 10px;
+}
+
+.sessionContent {
+  font-size: 10px;color: rgb(247,247,247);padding: 4px;margin: 0px;
+}
+
+#toPDF1 {
+  display: none;
+}
+/* #animDiv {
+  display: none !important;
+} */

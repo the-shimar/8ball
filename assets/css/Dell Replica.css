@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'Dell Replica';
+	src: url(../../assets/fonts/DELLREPLICA-REGULAR2.eot) format('embedded-opentype'),
+	url(../../assets/fonts/DELLREPLICA-REGULAR2.eot) format('embedded-opentype'),
+	url(../../assets/fonts/DELLREPLICA-REGULAR2.woff2) format('woff2'),
+	url(../../assets/fonts/DELLREPLICA-REGULAR2.woff) format('woff'),
+	url(../../assets/fonts/DELLREPLICA-REGULAR2.svg) format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
