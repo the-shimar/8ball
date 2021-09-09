@@ -2,20 +2,7 @@
 
 var animDiv = document.getElementById("animDiv");
 
-function seeRec() {
-    //show div
-    // animDiv.style.display = 'block';  
-    //hideupper priority div
-    // document.getElementById("actualDiv").style.display = 'none';  
-
-    // animDiv.innerHTML = String.raw`"<div class="d-xl-flex align-items-xl-center" id=ballContainer>
-    //         <model-viewer id= "ballObj"  src="assets/untitled.glb" alt="8 Ball" ar ar-modes="webxr scene-viewer quick-look" 
-    //         loading="eager" environment-image="neutral" shadow-intensity=".1" 
-    //         camera-orbit="180deg 90deg 100%" autoplay animation-name="pSphere1|CINEMA_4D_Main|Layer0.001">
-    //         </model-viewer>
-    //         </div>"`
-    
-    
+function seeRec() {    
 
       //getting radio values
       var ele = null;
@@ -46,9 +33,6 @@ function seeRec() {
           console.log("LStorage"+localStorage.getItem("dc_ans")+localStorage.getItem("mit_ans")+
           localStorage.getItem("hc_ans")+localStorage.getItem("wt_ans"));
 
-          // Simulate a mouse click:
-            // window.location.href = "/animation.html#animDiv";
-
     
     //Div of Left pane
     document.getElementById("LeftPane").remove();
@@ -57,12 +41,6 @@ function seeRec() {
     // document.getElementById("ballObjCurrent").style.marginLeft = "20%";
 
     const modelViewer = document.querySelector("model-viewer");
-
-    // setTimeout(AnimP, 1000);
-
-    // function AnimP() {
-    // modelViewer.play();
-    // }
 
     modelViewer.play();
 
