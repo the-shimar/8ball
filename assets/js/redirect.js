@@ -1,4 +1,4 @@
-var is_mobile = setInterval(redirectMobileView, 100);
+var is_mobile = setInterval(redirectMobileView, 3000);
 
 function redirectMobileView() {
     var width = window.innerWidth;
