@@ -1,4 +1,5 @@
-const dc_sub = ["The Future of Data is Innovative",
+function DataJs() {
+    const dc_sub = ["The Future of Data is Innovative",
                 "The Future of Data is Innovative",
                 "The Future of Data is Innovative",
                 "The Future of Data is Innovative "];
@@ -258,4 +259,5 @@ for (let i = 0; i < 4; i++) {
         break;
     }
 
+}
 }

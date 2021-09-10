@@ -6,7 +6,6 @@ function seeRec() {
 
       //getting radio values
       var ele = null;
-      var is_checkedChecker = 0;
       for (let r = 0; r < 4; r++) {
           if (r == 0)
           ele = document.getElementsByName('dc');
@@ -19,22 +18,14 @@ function seeRec() {
               
             for(let i = 0; i < ele.length; i++) {
                 if(ele[i].checked){
-                  if (r == 0) {
-                    localStorage.setItem("dc_ans", ele[i].value);
-                    is_checkedChecker += 1;
-                  }
-                  else if (r == 1) {
-                    localStorage.setItem("mit_ans", ele[i].value);
-                    is_checkedChecker += 1;
-                  }
-                  else if (r == 2) {
-                    localStorage.setItem("hc_ans", ele[i].value);
-                    is_checkedChecker += 1;
-                  }
-                  else if (r == 3) {
-                    localStorage.setItem("wt_ans", ele[i].value);
-                    is_checkedChecker += 1;
-                  }
+                  if (r == 0)
+                  localStorage.setItem("dc_ans", ele[i].value);
+                  else if (r == 1)
+                  localStorage.setItem("mit_ans", ele[i].value);
+                  else if (r == 2)
+                  localStorage.setItem("hc_ans", ele[i].value);
+                  else if (r == 3)
+                  localStorage.setItem("wt_ans", ele[i].value);
                 }
             }
           }
@@ -43,17 +34,14 @@ function seeRec() {
           localStorage.getItem("hc_ans")+localStorage.getItem("wt_ans"));
 
     //Getting and setting Div height
-    var ballMargin = this.document.getElementById("LeftPane");
-    ballMargin = ballMargin.offsetWidth;
-    document.getElementById("ballObjCurrent").style.marginLeft = 310%+"%";
-    window.location.href = "#ballObjCurrent";
+    var ballMarginTop = this.document.getElementById("LeftPane");
+    ballMarginTop = ballMarginTop.offsetHeight;
+    document.getElementById("ballObjCurrent").style.marginTop = ballMarginTop+"px";
+    window.location.href = "#ballObjCurrent"; 
 
     //Div of Left pane
     document.getElementById("LeftPane").remove();
-    document.getElementById("RightPane").className = "col d-xl-flex align-items-xl-center";
-    // document.getElementById("ballObjCurrent").style.marginLeft = "100px";
-    // document.getElementById("ballObjCurrent").style.marginLeft = "20%";
-    
+    document.getElementById("RightPane").className = "col-12 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center";
 
     const modelViewer = document.querySelector("model-viewer");
 
@@ -63,7 +51,7 @@ function seeRec() {
     let ball = document.getElementById("ballObjCurrent");
   
       var myVar = setInterval(spostaDiv, 20);
-      var margin = 310;
+      var margin = ballMarginTop;
   
       let l = window.screen.width;
       let w = 20;
@@ -71,15 +59,14 @@ function seeRec() {
       function spostaDiv() {
         console.log(w);
         if (margin == w) {
-          margin = 20 + "%";
+          margin = 0 + "px";
 
           // Simulate a mouse click:
           // window.location.href = "/recommendation_page.html#toPDF";
           HideAndOpen();
           DataJs();
         } else {
-          ball.style.marginLeft = margin + "%";
-          document.getElementById('ballObjCurrent').scrollIntoView();
+          ball.style.marginTop = margin + "px";
         }
         // margin -= .25 ;
         margin -= 1 ;
@@ -87,6 +74,7 @@ function seeRec() {
 }
 
 function HideAndOpen() {
+  document.getElementById("RightPane").remove();
   document.getElementById("actualDiv").style.display = "none";
   document.getElementById("PriorityDiv").style.display = "flex";
 
