@@ -1,3 +1,4 @@
+redirectMobileView();
 var is_mobile = setInterval(redirectMobileView, 3000);
 
 function redirectMobileView() {

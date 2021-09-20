@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/modelViewer.css"> 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </head>
 
 <body style="background: #ffffff;">
@@ -54,11 +59,11 @@
                     </div>
                 </div>
                 <div class="row" style="width: 100%;background: rgba(234,234,234,0.54);">
-                    <div class="col-5 d-xl-flex justify-content-xl-end align-items-xl-center">
+                    <div id="number_div" class="col-5 d-xl-flex justify-content-xl-end align-items-xl-center">
                         <p style="color: rgb(255,255,255);margin: 0px;"></p>
                     </div>
                     <div class="col d-flex d-sm-flex flex-column-reverse justify-content-center align-items-center justify-content-sm-center">
-                        <section class="d-inline-flex d-xl-flex justify-content-center justify-content-xl-start align-items-xl-center" style="color: #2cade3;">
+                        <section class="d-inline-flex d-xl-flex justify-content-center justify-content-xl-start  align-items-xl-center" style="color: #2cade3;">
                             <p style="margin-top: 10px;margin-right: 22px;margin-bottom: 10px;margin-left: 22px;color: #1572b8;font-family: 'Dell Replica';font-size: 14px;width: fit-content;">1</p>
                             <p style="margin-top: 10px;margin-right: 22px;margin-bottom: 10px;margin-left: 22px;color: #1572b8;font-family: 'Dell Replica';font-size: 14px;width: fit-content;">2</p>
                             <p style="margin-top: 10px;margin-right: 22px;margin-bottom: 10px;margin-left: 22px;color: #1572b8;font-family: 'Dell Replica';font-size: 14px;width: fit-content;">3</p>
@@ -312,7 +317,9 @@
                     </div>
                 </div>
                 <div class="row d-xl-flex align-items-xl-end" style="width: 100%;padding-top: 5%;background: rgba(234,234,234,0.54);">
-                    <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-sm-start justify-content-xl-center align-items-xl-center"><button id="downloadPDF" class="btn btn-primary" type="button" style="filter: blur(0px);height: 39px;width: 202.422px;border-radius: 0px;border-width: 0px;border-color: rgba(255,255,255,0);font-family: 'Dell Replica';color: rgb(255,255,255);background: #2887c8;">Share Recommendations</button>
+                    <!-- <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-sm-start justify-content-xl-center align-items-xl-center"><button id="downloadPDF" class="btn btn-primary" type="button" style="filter: blur(0px);height: 39px;width: 202.422px;border-radius: 0px;border-width: 0px;border-color: rgba(255,255,255,0);font-family: 'Dell Replica';color: rgb(255,255,255);background: #2887c8;">Share Recommendations</button> -->
+                        <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-sm-start justify-content-xl-center align-items-xl-center">
+                            <button class="btn btn-primary" type="button" style="filter: blur(0px);height: 39px;width: 202.422px;border-radius: 0px;border-width: 0px;border-color: rgba(255,255,255,0);font-family: 'Dell Replica';color: rgb(255,255,255);background: #2887c8;" data-toggle="modal" data-target="#shareModal" data-whatever="">Share Recommendations</button>
                         <p style="color: #074a85;font-size: 13px;padding-top: 0px;margin-top: 1%;margin-bottom: 5px;"><em>Download as PDF, share on email</em></p>
                     </div>
                     <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-sm-start justify-content-xl-center align-items-xl-center"><button class="btn btn-primary" type="button" style="filter: blur(0px);height: 39px;width: 202.422px;border-radius: 0px;border-width: 0px;border-color: rgba(255,255,255,0);font-family: 'Dell Replica';color: rgb(255,255,255);background: #2887c8;">Build My Agenda<br><br></button>
@@ -329,6 +336,55 @@
                 </div>
             </div>
         </div>
+
+        <!--Modal-->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shareModal" data-whatever="@mdo">Open modal for @mdo</button> -->
+        
+        <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="shareModalLabel" style="font-family: 'Dell Replica';">Share Recommendations</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-sm-start justify-content-xl-center align-items-xl-center"><button id="downloadPDF" class="btn btn-primary" type="button" style="filter: blur(0px);height: 39px;width: 202.422px;border-radius: 0px;border-width: 0px;border-color: rgba(255,255,255,0);font-family: 'Dell Replica';color: rgb(255,255,255);background: #2887c8;">Download as PDF</button>
+                        <p style="font-family: 'Dell Replica';color: #074a85;font-size: 13px;padding-top: 0px;margin-top: 1%;margin-bottom: 5px;"><em>Download Recommendations as pdf</em></p>
+                    </div>
+                    
+                        <form style="padding-left: 10%; padding-right: 10%;">
+                            <div class="form-group">
+                              <label for="recipient-name" style="font-family: 'Dell Replica';" class="col-form-label">Recipient:</label>
+                              <input style="font-family: 'Dell Replica';" type="email" placeholder="Email address" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-sm-start justify-content-xl-center align-items-xl-center">
+                                <button class="btn btn-primary" type="button" style="margin-top: 1%; filter: blur(0px);height: 39px;width: 202.422px;border-radius: 0px;border-width: 0px;border-color: rgba(255,255,255,0);font-family: 'Dell Replica';color: rgb(255,255,255);background: #2887c8;">Send as Email</button>
+                                </div>
+                            </div>
+                          </form>
+                  
+                </div>
+                <div class="modal-footer">
+                  
+                </div>
+              </div>
+            </div>
+          </div>    
+
+          <script>
+              $('#shareModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+                var recipient = button.data('whatever') // Extract info from data-* attributes
+                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                var modal = $(this)
+                modal.find('.modal-title').text('New message to ' + recipient)
+                modal.find('.modal-body input').val(recipient)
+                })
+          </script>
 
         <div class="row">
             <div class="col d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 5px;margin-bottom: 5px;">

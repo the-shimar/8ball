@@ -1,3 +1,16 @@
+redirectMobileView();
+
+var dum_width = window.innerWidth;
+console.log("d width test: "+dum_width);
+if (399 < dum_width) {
+    if (dum_width < 425) {
+    console.log("d width: "+dum_width);
+    document.getElementById("number_div").className = "col-6 d-xl-flex justify-content-xl-end align-items-xl-center";
+    }
+}
+
+
+
 var is_mobile = setInterval(redirectMobileView, 3000);
 
 function redirectMobileView() {
