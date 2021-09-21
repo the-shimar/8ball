@@ -1,6 +1,7 @@
 redirectMobileView();
 
 var dum_width = window.innerWidth;
+document.getElementById("ft_index").innerHTML = dum_width;
 console.log("d width test: "+dum_width);
 if (399 < dum_width) {
     if (dum_width < 450) {
