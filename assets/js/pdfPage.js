@@ -5,9 +5,9 @@ window.onload = function () {
             // const content = this.document.getElementById("toPDF1");
             // content.style.display = "flex";
 
-            console.log(invoice);
+            // console.log(invoice);
 
-            console.log(window);
+            // console.log(window);
             var opt = {
                 // margin: 1,
                 margin: 0,

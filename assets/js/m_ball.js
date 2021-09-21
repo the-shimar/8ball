@@ -30,8 +30,8 @@ function seeRec() {
             }
           }
 
-          console.log("LStorage"+localStorage.getItem("dc_ans")+localStorage.getItem("mit_ans")+
-          localStorage.getItem("hc_ans")+localStorage.getItem("wt_ans"));
+          // console.log("LStorage"+localStorage.getItem("dc_ans")+localStorage.getItem("mit_ans")+
+          // localStorage.getItem("hc_ans")+localStorage.getItem("wt_ans"));
 
     //Getting and setting Div height
     var ballMarginTop = this.document.getElementById("LeftPane");
@@ -57,7 +57,7 @@ function seeRec() {
       let w = 20;
   
       function spostaDiv() {
-        console.log(w);
+        // console.log(w);
         if (margin == w) {
           margin = 0 + "px";
 

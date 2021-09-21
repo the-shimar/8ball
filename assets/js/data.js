@@ -45,7 +45,7 @@ console.log("LStorage"+localStorage.getItem("dc_ans")+localStorage.getItem("mit_
           localStorage.getItem("hc_ans")+localStorage.getItem("wt_ans"));
 
 var priority_list = [localStorage.getItem("dc_ans"), localStorage.getItem("mit_ans"), localStorage.getItem("hc_ans"), localStorage.getItem("wt_ans")] //should be in this order
-console.log("List: "+priority_list);
+// console.log("List: "+priority_list);
 // let a =  [2,2,1,1];
 
 function Priority(a) {
@@ -85,7 +85,7 @@ return changePriority();
 }
 
 priority_listDone = Priority(priority_list);
-console.log("PLD: "+priority_listDone);
+// console.log("PLD: "+priority_listDone);
 
 for(let c=0; c<4; c++) {
     priority_list[c] -= 1; 
@@ -150,7 +150,7 @@ let current_array = null;
 let heading1234 = null;
 //Priority
 for (let i = 0; i < 4; i++) {
-    console.log("Prior number: " +priority_listDone[i]);
+    // console.log("Prior number: " +priority_listDone[i]);
     if (i == 0) {
         expression = priority_listDone[i];
         current_array_sub = dc_sub;
@@ -178,7 +178,7 @@ for (let i = 0; i < 4; i++) {
 
     switch(expression) {
         case 1:
-            console.log("c1");
+            // console.log("c1");
             h1.innerHTML = heading1234;
             //subheading
             s11.innerHTML  = current_array_sub[0];
@@ -199,7 +199,7 @@ for (let i = 0; i < 4; i++) {
         break;
 
         case 2:
-            console.log("c2");
+            // console.log("c2");
             h2.innerHTML = heading1234;
             //subheading
             s21.innerHTML = current_array_sub[0];
@@ -219,7 +219,7 @@ for (let i = 0; i < 4; i++) {
         break;
 
         case 3:
-            console.log("c3");
+            // console.log("c3");
             h3.innerHTML = heading1234;
             //subheading
             s31.innerHTML = current_array_sub[0];
@@ -239,7 +239,7 @@ for (let i = 0; i < 4; i++) {
         break;
 
         case 4:
-            console.log("c4");
+            // console.log("c4");
             h4.innerHTML = heading1234;
             //subheading
             s41.innerHTML = current_array_sub[0];
