@@ -355,15 +355,16 @@
                         <p style="font-family: 'Dell Replica';color: #074a85;font-size: 13px;padding-top: 0px;margin-top: 1%;margin-bottom: 5px;"><em>Download Recommendations as pdf</em></p>
                     </div>
                     
-                        <form style="padding-left: 10%; padding-right: 10%;">
+                        <form action="" onsubmit="return openEmailSender()" style="padding-left: 10%; padding-right: 10%;">
                             <div class="form-group">
                               <label for="recipient-name" style="font-family: 'Dell Replica';" class="col-form-label">Recipient:</label>
-                              <input style="font-family: 'Dell Replica';" type="email" placeholder="Email address" class="form-control" id="recipient-name">
+                              <input id="EmailField" style="font-family: 'Dell Replica';" type="email" placeholder="Email address" class="form-control" id="recipient-name" required>
                             </div>
                             <div class="form-group">
                                 <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-sm-start justify-content-xl-center align-items-xl-center">
-                                <button class="btn btn-primary" type="button" style="margin-top: 1%; filter: blur(0px);height: 39px;width: 202.422px;border-radius: 0px;border-width: 0px;border-color: rgba(255,255,255,0);font-family: 'Dell Replica';color: rgb(255,255,255);background: #2887c8;">Send as Email</button>
-                                </div>
+                                <button class="btn btn-primary" type="submit" style="margin-top: 1%; filter: blur(0px);height: 39px;width: 202.422px;border-radius: 0px;border-width: 0px;border-color: rgba(255,255,255,0);font-family: 'Dell Replica';color: rgb(255,255,255);background: #2887c8;">Send as Email</button>
+                                <p id="EmailMessage" style="color: green;"></p>
+                            </div>
                             </div>
                           </form>
                   
@@ -396,6 +397,12 @@
     <script>
         function Agenda() {
             window.open("https://cvent.me/ovzYgK", '_blank');
+        }
+        function openEmailSender() {
+            window.open("/emailpdf.html", '_blank');
+            var recpEmail = document.getElementById("EmailField").value;
+            localStorage.setItem("EmailField", recpEmail);
+            setTimeout(() => {document.getElementById("EmailMessage").innerHTML = "Email Sent!"; }, 2000);
         }
     </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
